@@ -91,7 +91,7 @@ Content-Type: application/json
   "global": <Object<string|number|Array|Object>>
 }
 ```
-  * Request Url `url` - `<string>` - The value of location.pathname that will be available to the rendered client application.
+  * Request Url - `<url string>` - The value of location.pathname that will be available to the rendered client application.
   * Request Headers:
       * `Content-Type` - The type of content that will be sent in the request body. Should be `application/json`.
   * Request Body - The JSON data for the render of the client application. Should only include the `"global"` object. Properties of the `"global"` object will be directly set on the global `window` object that will be available to the rendered client application.
