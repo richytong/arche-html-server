@@ -82,6 +82,37 @@ Arguments:
     * `scriptImports` - `Array<string>` - An array of urls of scripts to import within a render of an Arche application using the `import` statement. Defaults to `[]`.
     * `htmlHandler` - `HtmlHandler` - A function that defines how the Arche HTML server will handle the rendered HTML. Defaults to a handler that responds with status code 200 and the rendered HTML.
 
+API:
+```
+POST <url>
+Content-Type: application/json
+
+{
+  "global": <Object<string|number|Array|Object>>
+}
+```
+  * Request Url `url` - `<string>` - The value of location.pathname that will be available to the rendered client application.
+  * Request Headers:
+      * `Content-Type` - The type of content that will be sent in the request body. Should be `application/json`.
+  * Request Body - The JSON data for the render of the client application. Should only include the `"global"` object. Properties of the `"global"` object will be directly set on the global `window` object that will be available to the rendered client application.
+
+API Example:
+```
+POST /dashboard
+Content-Type: application/json
+
+{
+  "global": {
+    "companyName": "Example",
+    "companyLogoImageUrl": "Example-logo.jpg",
+    "employees": [
+      { name: 'Example Employee', title: 'Product Manager' },
+      { name: 'Example Employee', title: 'Software Engineer' }
+    ]
+  }
+}
+```
+
 #### listen
 
 ```coffeescript [specscript]
