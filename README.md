@@ -84,7 +84,7 @@ Arguments:
 
 API:
 ```
-POST <url>
+POST <url string>
 Content-Type: application/json
 
 {
