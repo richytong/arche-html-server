@@ -1,6 +1,6 @@
 # Arche HTML Server
 
-HTML server for [vanilla microfrontends](https://arche.gallery/blog/vanilla-microfrontends).
+HTML server for [vanilla microfrontends](https://arche.gallery/).
 
 Source code: [GitHub](https://github.com/richytong/arche-html-server) |
 License: [CFOSS](https://cloutsworld.com/en-us/legal/license/cfoss)
