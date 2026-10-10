@@ -20,12 +20,14 @@
     "package.json"
   ],
   "keywords": [
-    "HTML",
-    "HTTP",
-    "Server",
+    "ssr",
+    "server-side-rendering",
+    "html",
+    "http",
+    "server",
     "Arche",
-    "Vanilla",
-    "Microfrontends"
+    "vanilla",
+    "microfrontends"
   ],
   "type": "commonjs",
   "devDependencies": {
