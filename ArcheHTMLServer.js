@@ -1,3 +1,7 @@
+/**
+ * Arche HTML Server may be freely distributed under the CFOSS license.
+ */
+
 const http = require('http')
 const cluster = require('cluster')
 const os = require('os')

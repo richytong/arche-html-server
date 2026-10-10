@@ -1,3 +1,7 @@
+/**
+ * Arche HTML Server may be freely distributed under the CFOSS license.
+ */
+
 import Arche from 'arche/index.mjs'
 import rubico from 'rubico/dist/rubico.mjs'
 

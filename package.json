@@ -15,12 +15,9 @@
   },
   "files": [
     "ArcheHTMLServer.js",
-    "ReadableText.js",
     "getRootHtml.mjs",
-    "index.mjs",
     "logRootHtml.mjs",
-    "package.json",
-    "sleep.mjs"
+    "package.json"
   ],
   "keywords": [
     "HTML",
