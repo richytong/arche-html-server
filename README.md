@@ -33,16 +33,16 @@ htmlServer.listen(8081, () => {
   console.log("HTML server listening on port 8081")
 })
 
-const htmlClient = new HTTP('http://localhost:8081/')
+const htmlClient = new HTTP("http://localhost:8081/")
 
-await htmlClient.POST('/', {
+await htmlClient.POST("/", {
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
     global: {
       windowVarA: 1,
-      windowVarB: 'example',
+      windowVarB: "example",
       windowVarC: [1, 2, 3],
       windowVarD: { a: 1 },
     },
