@@ -55,7 +55,7 @@ function defaultHtmlHandler(html, request, response) {
  * ```coffeescript [specscript]
  * module http "https://nodejs.org/api/http.html"
  *
- * new ArcheHTMLServer(rootImport, options {
+ * new ArcheHTMLServer(rootImport string, options {
  *   scriptImports: Array<string>,
  *   htmlHandler: (
  *     html string,

@@ -22,7 +22,14 @@
     "package.json",
     "sleep.mjs"
   ],
-  "keywords": [],
+  "keywords": [
+    "HTML",
+    "HTTP",
+    "Server",
+    "Arche",
+    "Vanilla",
+    "Microfrontends"
+  ],
   "type": "commonjs",
   "devDependencies": {
     "nyc": "^18.0.0",

@@ -25,13 +25,83 @@ const ArcheHTMLServer = require("arche-html-server")
 
 ```javascript
 const ArcheHTMLServer = require("arche-html-server")
+const HTTP = require("presidium/HTTP")
 
 const htmlServer = new ArcheHTMLServer("/path/to/react/Root.js")
 
 htmlServer.listen(8081, () => {
   console.log("HTML server listening on port 8081")
 })
+
+const htmlClient = new HTTP('http://localhost:8081/')
+
+await htmlClient.POST('/', {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    global: {
+      windowVarA: 1,
+      windowVarB: 'example',
+      windowVarC: [1, 2, 3],
+      windowVarD: { a: 1 },
+    },
+  }),
+})
 ```
+
+## Docs
+
+### ArcheHTMLServer
+
+```coffeescript [specscript]
+module http "https://nodejs.org/api/http.html"
+
+type HtmlHandler = (
+  html string,
+  request http.ClientRequest,
+  response http.ServerResponse
+)=>Promise<>|undefined
+
+new ArcheHTMLServer(rootImport string, options {
+  scriptImports: Array<string>,
+  htmlHandler: HtmlHandler,
+}) -> ArcheHTMLServer
+```
+
+Arche HTML Server class. Creates an HTTP server that serves HTML from the root of an Arche application. An Arche application is a software application that uses the [Arche](https://arche.gallery/) library.
+
+Supported libraries with Arche:
+  * [React](https://react.dev/)
+  * [Styled Components](https://styled-components.com/)
+  * [document](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+Arguments:
+  * `rootImport` - `string` - The file path to the root file of the Arche application.
+  * `options`
+    * `scriptImports` - `Array<string>` - An array of urls of scripts to import within a render of an Arche application using the `import` statement. Defaults to `[]`.
+    * `htmlHandler` - `HtmlHandler` - A function that defines how the Arche HTML server will handle the rendered HTML. Defaults to a handler that responds with status code 200 and the rendered HTML.
+
+#### listen
+
+```coffeescript [specscript]
+listen(port number) -> ()
+listen(port number, callback function) -> ()
+```
+
+Runs the Arche HTML server.
+
+Arguments:
+  * `port` - `number` - The port number on which the Arche HTML server will listen.
+  * `callback` - `function` - A function that is called after the Arche HTML server has started listening.
+
+#### close
+
+```coffeescript [specscript]
+close() -> ()
+```
+
+Closes the Arche HTML server.
 
 ## License
 
