@@ -82,13 +82,13 @@ Arguments:
     * `scriptImports` - `Array<string>` - An array of urls of scripts to import within a render of an Arche application using the `import` statement. Defaults to `[]`.
     * `htmlHandler` - `HtmlHandler` - A function that defines how the Arche HTML server will handle the rendered HTML. Defaults to a handler that responds with status code 200 and the rendered HTML.
 
-API:
+Request API:
 ```
 POST <url string>
 Content-Type: application/json
 
 {
-  "global": <Object<string|number|Array|Object>>
+  "global": <JSONObject<string|number|JSONArray|JSONObject>>
 }
 ```
   * Request Url - `<url string>` - The value of location.pathname that will be available to the rendered client application.
@@ -96,7 +96,7 @@ Content-Type: application/json
       * `Content-Type` - The type of content that will be sent in the request body. Should be `application/json`.
   * Request Body - The JSON data for the render of the client application. Should only include the `"global"` object. Properties of the `"global"` object will be directly set on the global `window` object that will be available to the rendered client application.
 
-API Example:
+Request API Example:
 ```
 POST /dashboard
 Content-Type: application/json
@@ -112,6 +112,12 @@ Content-Type: application/json
   }
 }
 ```
+
+Response API:
+```
+<html string>
+```
+  * Response Body - `<html string>` - the rendered HTML.
 
 #### listen
 
